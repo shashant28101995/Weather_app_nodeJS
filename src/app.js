@@ -5,7 +5,7 @@ const { geoCode } = require('./utiils/geoCode.js')
 const { foreCast } = require('./utiils/foreCast.js');
 
 const app = express();
-
+const port = process.env.PORT || 3000
 const pathDirectoryString = path.join(__dirname, '../public')
 const viewPathDirecotory = path.join(__dirname, '../templates/views')
 const partialPathDirectory = path.join(__dirname, '../templates/partials')
@@ -90,6 +90,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log("SERVER IS UP ON 3000")
+app.listen(port, () => {
+    console.log("SERVER IS UP ON " + port)
 })
